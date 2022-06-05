@@ -5,7 +5,7 @@ const iconMap = {
   dog: "🐕",
 };
 
-export const Pet = ({ kind, pet }) => {
+const Pet = ({ kind, pet }) => {
   const icon = iconMap[kind];
   return (
     <article key={pet.id}>
