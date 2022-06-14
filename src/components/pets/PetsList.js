@@ -12,21 +12,20 @@ const PetsList = ({ pets, type }) => {
     [[], []]
   );
 
+  let displayPets =
+    type === "Cats"
+      ? cats.map((cat) => <Pet key={cat.id} kind="cat" pet={cat} />)
+      : type === "Dogs"
+      ? dogs.map((dog) => <Pet key={dog.id} kind="dog" pet={dog} />)
+      : pets.map((pet) => <Pet key={pet.id} kind={pet.kind.toLowerCase()} pet={pet} />
+      );
+  debugger;
   return (
     <section className="pets-wrapper">
       <PetsListNav cats={cats} dogs={dogs} />
       <section className="pets-list">
         {/* All cats section */}
-        {type === "Cats" ? cats.map((cat) => (
-          <Pet key={cat.id} kind="cat" pet={cat} />
-        )) :type === "Dogs" ? dogs.map((dog) => (
-          <Pet key={dog.id} kind="dog" pet={dog} />
-        )) : pets.map((pet)=>{
-          <Pet key={pet.id} kind={pet.kind.toLowerCase()} pet={pet} />
-        })
-        }
-        
-       
+        {displayPets}
       </section>
     </section>
   );

@@ -54,7 +54,7 @@ const App = () => {
   return (
     <div className="wrapper">
       <Router>
-        <Nav />
+        <Nav pets = {petsList} />
 
         <Routes>
           <Route
